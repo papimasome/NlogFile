@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TemplatePrj.Middleware;
+using Microsoft.EntityFrameworkCore;
+using TemplatePrj.Data;
 
 namespace TemplatePrj
 {
@@ -26,6 +28,9 @@ namespace TemplatePrj
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddDbContext<TemplatePrjContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("TemplatePrjContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

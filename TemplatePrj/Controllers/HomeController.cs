@@ -22,8 +22,12 @@ namespace TemplatePrj.Controllers
         public IActionResult Index()
         {
 
-          _logger.LogWarning(MyLogEvents.GetItem,"warning called");
-           _logger.LogInformation("Hello, this is the index!");
+          _logger.LogWarning("warning called");
+          _logger.LogInformation(MyLogEvents.GetItem, "Hello, this is the index!");
+            _logger.LogError("gff");
+            _logger.LogDebug("gghg");
+            _logger.LogTrace("fgf");
+            _logger.LogInformation("jkjk");
             return View();
         }
 
